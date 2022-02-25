@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18572654-afe4-426f-9d9c-ced06cb2b39d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/dotsafe-skills-api/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="web-interface" />
+                    <option name="lastUsedInstant" value="1645782325" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="API" />
+                    <option name="lastUsedInstant" value="1645781651" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/composer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/dotsafe-skills-api/vendor/symfony/polyfill-intl-idn" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="25YvZddKz6JLCXi2xLoztM5QYSg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dotsafe-skills-API/src/DataFixtures" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dotsafe-skills-API/src/DataFixtures" />
+      <recent name="$PROJECT_DIR$/dotsafe-skills-API" />
+      <recent name="$PROJECT_DIR$/dotsafe-skills-api" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18572654-afe4-426f-9d9c-ced06cb2b39d" name="Default Changelist" comment="" />
+      <created>1645716890387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645716890387</updated>
+      <workItem from="1645716891571" duration="9455000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
