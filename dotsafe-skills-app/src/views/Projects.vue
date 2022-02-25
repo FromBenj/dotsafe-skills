@@ -1,7 +1,12 @@
 <template>
   <div class="projects">
     <p>it is working</p>
-    <Project name="Welcome to Your Vue.js App"/>
+    <div>
+      <Project v-for="project in dotsafeProjects"
+               :name="project.name"
+               :key="project.id"
+      />
+    </div>
   </div>
 </template>
 
@@ -18,21 +23,19 @@ export default {
   },
   data() {
     return {
-      dotsafeProjects: []
+      dotsafeProjects: {}
     }
   },
   methods: {
     getProjects() {
       axios
-          .get('http://localhost:8000/api/projects')
-          .then(response => (
-              //this.products = response.data
-              console.log(response.data)
-          .catch(error => console.log(error))
-          ));
+          .get('http://127.0.0.1:8000/api/projects')
+          .then(response => (this.dotsafeProjects = response.data))
+          .catch(error => console.log(error));
+      console.log(this.dotsafeProjects)
     },
   },
-  created() {
+  mounted() {
     this.getProjects();
   }
 }
