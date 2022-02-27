@@ -8,6 +8,8 @@
 
 import Member from '@/components/Member.vue'
 import axios from 'axios'
+import {apiRoot} from '@/API-config'
+
 
 
 export default {
@@ -23,7 +25,7 @@ export default {
   methods: {
     getMembers() {
       axios
-          .get('http://127.0.0.1:8000/api/members')
+          .get(apiRoot +'members')
           .then(response => (this.dotsafeMembers = response.data))
           .catch(error => console.log(error));
       console.log(this.dotsafeMembers)
