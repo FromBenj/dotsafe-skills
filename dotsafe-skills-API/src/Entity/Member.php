@@ -9,7 +9,17 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Core\Annotation\ApiResource;
 
-#[ApiResource()]
+#[ApiResource(itemOperations: [
+    'get',
+    'put',
+    'post',
+    'delete',
+    'member_projects' => [
+        'method' => 'GET',
+        'path' => '/members/{id}/projects',
+        'controller' => MemberProjects::class,
+    ],
+])]
 #[ORM\Entity(repositoryClass: MemberRepository::class)]
 class Member
 {
