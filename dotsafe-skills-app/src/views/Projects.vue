@@ -8,14 +8,14 @@
         <div id="member-select-container" class="d-flex flex-column pl-5">
           <label class="m-0" for="member-select">Membre</label>
           <select name="member" id="member-select" @change=getMemberProjects($event)>
-            <option value="all">---Tous---</option>
+            <option value="all">--- Tous ---</option>
             <option v-for="member in members" :key="member.id" :value="member.id">{{ member.firstname + ' ' + member.lastname}}</option>
           </select>
         </div>
         <div id="technology-select-container" class="d-flex flex-column pl-5">
           <label class="m-0" for="technology-select">Technologie</label>
           <select name="technology" id="technology-select" @change=getTechnologyProjects($event)>
-            <option value="all">---Toutes---</option>
+            <option value="all">--- Toutes ---</option>
             <option v-for="technology in technologies" :key="technology.id" :value="technology.id">{{ technology.name}}</option>
           </select>
         </div>

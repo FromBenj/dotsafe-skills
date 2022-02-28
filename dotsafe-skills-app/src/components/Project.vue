@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 col-md-2 project-container">
+  <div class="col-3 col-md-2 project-container" data-toggle="modal" :data-target=fullModalPresentation>
     <div class="project-small-border project h-100 bg-white d-flex justify-content-center align-items-center">
       <h4 class="mb-0 font-weight-bold text-center">
         {{project.name}}
@@ -8,6 +8,30 @@
     <div class="cursor-pointer text-center font-italic mt-2 d-flex justify-content-between">
       <p class="ml-3 action-button" data-toggle="modal" :data-target=fullModalModification >Modifier</p>
       <p class="mr-3 action-button" data-toggle="modal" :data-target=fullModalDelete>Supprimer</p>
+    </div>
+
+    <!-- Presentation modal -->
+    <div class="modal fade" :id=modalPresentation tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="font-weight-bold">Présentation des contributeurs par technologie</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div  class="member-list-container" v-for="techno in this.projectInfos.technologies" :key="techno.id">
+              <div class="font-weight-bold">{{techno.name}}</div>
+              <ul>
+                <li class="member-list" v-for="member in this.projectInfos[techno.name]" :key="member.id">
+                  {{ member.firstname + " " + member.lastname }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Modification modal -->
@@ -52,6 +76,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import {apiRoot} from "@/API-config";
+
 export default {
   name: 'Project',
   props: {
@@ -60,12 +87,23 @@ export default {
       required: true
     },
   },
+  data() {
+    return {
+      projectInfos: [],
+    }
+  },
   computed: {
     modalModification() {
       return "project-modification-" + this.project.id;
     },
     fullModalModification() {
       return "#" + this.modalModification;
+    },
+    modalPresentation() {
+      return "project-presentation-" + this.project.id;
+    },
+    fullModalPresentation() {
+      return "#" + this.modalPresentation;
     },
     modificationInputId() {
       return "modification-input-" + this.project.id
@@ -97,8 +135,19 @@ export default {
     },
     projectDelete() {
       this.$emit("delete-project", {project: this.project});
+    },
+    getProjectInfos() {
+      const project = this.project.id
+      axios
+          .get(apiRoot + 'projects/' + project + '/contributions')
+          .then(response => {
+            this.projectInfos = response.data})
+          .catch(error => console.log(error));
     }
   },
+  mounted() {
+    this.getProjectInfos();
+  }
 }
 </script>
 
@@ -136,5 +185,13 @@ export default {
   }
   .action-button:hover {
     font-weight: bold;
+  }
+  .member-list {
+    list-style-type: none;
+    border-bottom: solid 1px orange;
+    margin-top: 0.5rem;
+  }
+  .member-list-container {
+    margin-top: 2rem;
   }
 </style>
