@@ -15,6 +15,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
+            <div class="font-weight-bold">Nouveau nom du projet</div>
             <button type="button" :id=modifyCloseButtonId class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

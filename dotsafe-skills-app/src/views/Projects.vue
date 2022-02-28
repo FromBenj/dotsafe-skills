@@ -118,14 +118,27 @@ export default {
     },
     getMemberProjects(event) {
       if (event) {
-        let selectValue = event.target.value;
-        if (selectValue === "all") {
-          this.getAllProjects();
+        let memberValue = event.target.value;
+        let technologyValue = document.getElementById("technology-select").value;
+        let projects = [];
+        if (memberValue === "all") {
+          this.getTechnologyAllProjects(technologyValue);
         } else {
-          axios
-              .get(apiRoot + 'members/' + selectValue + '/projects')
-              .then(response => (this.dotsafeProjects = response.data))
-              .catch(error => console.log(error));
+        axios
+            .get(apiRoot + 'members/' + memberValue + '/contributions')
+            .then((response) => {
+              for (let i = 0; i < response.data.length; i++) {
+                if (technologyValue === "all") {
+                  projects.push(response.data[i]["project"]);
+                } else {
+                  if (response.data[i]["technology"].id === technologyValue) {
+                    projects.push(response.data[i]["project"]);
+                  }
+                }
+              }
+              this.dotsafeProjects = projects;
+            })
+            .catch(error => console.log(error));
         }
       }
     },
@@ -137,24 +150,64 @@ export default {
     },
     getTechnologyProjects(event) {
       if (event) {
-        //let technologyValue = event.target.value;
         let memberValue = document.getElementById('member-select').value;
-        axios
-            .get(apiRoot + 'members/' + memberValue + '/projects')
-            .then(response => (console.log(response.data[0].technologies)))
-            .catch(error => console.log(error));
-      }
-        /*
-        if (["", "all"].includes(selectValue)) {
-          this.getAllProjects();
+        let technologyValue = event.target.value;
+        console.log(technologyValue)
+        if (memberValue === "all") {
+          this.getTechnologyAllProjects(technologyValue);
         } else {
-          axios
-              .get(apiRoot + 'members/' + selectValue + '/projects')
-              .then(response => (this.dotsafeProjects = response.data))
-              .catch(error => console.log(error));
+          let projects = [];
+          if (technologyValue === "all")  {
+            this.getMemberAllProjects(memberValue);
+          } else {
+            axios
+                .get(apiRoot + 'members/' + memberValue + '/contributions')
+                .then(response => {
+                  for (let i = 0; i < response.data.length; i++) {
+                    if (response.data[i].technology.id === parseInt(technologyValue)) {
+                      projects.push(response.data[i].project)
+                    }
+                  }
+                  this.dotsafeProjects = projects;
+                })
+                .catch(error => console.log(error));
+          }
         }
-
-         */
+      }
+    },
+    getMemberAllProjects(member) {
+      let projects = [];
+      axios
+          .get(apiRoot + 'members/' + member + '/contributions')
+          .then(response => {
+            let projectsIds = [];
+            for (let i = 0; i < response.data.length; i++) {
+              let project = response.data[i].project;
+              if (!projectsIds.includes(project.id)) {
+                projectsIds.push(project.id)
+                projects.push(project)
+              }
+            }
+            this.dotsafeProjects = projects
+          })
+          .catch(error => console.log(error));
+    },
+    getTechnologyAllProjects(techno) {
+      let projects = [];
+      axios
+          .get(apiRoot + 'technologies/' + techno + '/contributions')
+          .then(response => {
+            let projectsIds = [];
+            for (let i = 0; i < response.data.length; i++) {
+              let project = response.data[i].project;
+              if (!projectsIds.includes(project.id)) {
+                projectsIds.push(project.id)
+                projects.push(project)
+              }
+            }
+            this.dotsafeProjects = projects
+          })
+          .catch(error => console.log(error));
     }
   },
   mounted() {
