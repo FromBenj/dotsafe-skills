@@ -2,14 +2,21 @@
   <div class="projects">
     <div class="d-flex justify-content-between align-items-center">
       <div class="d-flex justify-content-start align-items-center">
-        <div class="mr-3">
-          Filtrer par:
+        <div class="font-weight-bold mr-3">
+          Filtrer par :
         </div>
-        <div>
-          <select name="member" id="member-select">
-            <option value="">MEMBRE</option>
+        <div id="member-select-container" class="d-flex flex-column pl-5">
+          <label class="m-0" for="member-select">Membre</label>
+          <select name="member" id="member-select" @change=getMemberProjects($event)>
             <option value="all">---Tous---</option>
             <option v-for="member in members" :key="member.id" :value="member.id">{{ member.firstname + ' ' + member.lastname}}</option>
+          </select>
+        </div>
+        <div id="technology-select-container" class="d-flex flex-column pl-5">
+          <label class="m-0" for="technology-select">Technologie</label>
+          <select name="technology" id="technology-select" @change=getTechnologyProjects($event)>
+            <option value="all">---Toutes---</option>
+            <option v-for="technology in technologies" :key="technology.id" :value="technology.id">{{ technology.name}}</option>
           </select>
         </div>
       </div>
@@ -55,7 +62,7 @@ export default {
     return {
       dotsafeProjects: [],
       members: [],
-      member: {}
+      technologies: [],
     }
   },
   methods: {
@@ -63,7 +70,7 @@ export default {
       const addInputContainer = document.getElementById('project-input-container');
       if (addInputContainer.classList.contains('d-none')) {
         addInputContainer.classList.replace('d-none', 'd-flex');
-      } else{
+      } else {
         addInputContainer.classList.replace('d-flex', 'd-none');
       }
     },
@@ -77,7 +84,7 @@ export default {
       const projectInput = document.getElementById('project-input')
       let newProject = {name: projectInput.value}
       axios
-          .post(apiRoot + 'projects', newProject )
+          .post(apiRoot + 'projects', newProject)
           .then(response => (this.dotsafeProjects.push(response.data)))
           .catch(error => console.log(error));
       const addInputContainer = document.getElementById('project-input-container');
@@ -87,7 +94,7 @@ export default {
     modifyProject(payload) {
       const updatedProject = {name: payload.newName};
       axios
-          .put(apiRoot + 'projects/' + payload.projectToModify.id, updatedProject )
+          .put(apiRoot + 'projects/' + payload.projectToModify.id, updatedProject)
           .then(() => (this.getAllProjects()))
           .catch(error => console.log(error));
       const closeButton = document.getElementById('modify-close-button-' + payload.projectToModify.id);
@@ -109,26 +116,51 @@ export default {
           .then(response => (this.members = response.data))
           .catch(error => console.log(error));
     },
-    getMemberProjects() {
-      const memberSelect = document.getElementById('member-select')
-      memberSelect.addEventListener('change', function() {
-        //let memberId = this.value;
-/*        axios
-            .get(apiRoot + 'members/' + memberId)
-            .then(response => (console.log(response.data.contributions[0])))
-            .catch(error => console.log(error));
- */
+    getMemberProjects(event) {
+      if (event) {
+        let selectValue = event.target.value;
+        if (selectValue === "all") {
+          this.getAllProjects();
+        } else {
+          axios
+              .get(apiRoot + 'members/' + selectValue + '/projects')
+              .then(response => (this.dotsafeProjects = response.data))
+              .catch(error => console.log(error));
+        }
+      }
+    },
+    getAllTechnologies() {
+      axios
+          .get(apiRoot + 'technologies')
+          .then(response => (this.technologies = response.data))
+          .catch(error => console.log(error));
+    },
+    getTechnologyProjects(event) {
+      if (event) {
+        //let technologyValue = event.target.value;
+        let memberValue = document.getElementById('member-select').value;
         axios
-            .get(apiRoot + 'contributions')
-            .then(response => (console.log(response.data)))
+            .get(apiRoot + 'members/' + memberValue + '/projects')
+            .then(response => (console.log(response.data[0].technologies)))
             .catch(error => console.log(error));
-      })
+      }
+        /*
+        if (["", "all"].includes(selectValue)) {
+          this.getAllProjects();
+        } else {
+          axios
+              .get(apiRoot + 'members/' + selectValue + '/projects')
+              .then(response => (this.dotsafeProjects = response.data))
+              .catch(error => console.log(error));
+        }
+
+         */
     }
   },
   mounted() {
     this.getAllProjects();
     this.getAllMembers();
-    this.getMemberProjects();
+    this.getAllTechnologies();
   }
 }
 </script>
@@ -152,5 +184,8 @@ export default {
 }
 #validation-button {
   cursor: pointer;
+}
+#member-select-container {
+  border-left: solid 1px;
 }
 </style>
