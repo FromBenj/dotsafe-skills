@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Controller\MemberProjects;
+use App\Controller\MemberContributions;
 use App\Repository\MemberRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -15,10 +15,10 @@ use ApiPlatform\Core\Annotation\ApiResource;
     'put',
     'post',
     'delete',
-    'member_projects' => [
+    'member_contributions' => [
         'method' => 'GET',
-        'path' => '/members/{id}/projects',
-        'controller' => MemberProjects::class,
+        'path' => '/members/{id}/contributions',
+        'controller' => MemberContributions::class,
     ],
 ])]
 #[ORM\Entity(repositoryClass: MemberRepository::class)]
@@ -39,7 +39,7 @@ class Member
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $email;
 
-    #[ORM\OneToMany(mappedBy: 'member', targetEntity: Contribution::class)]
+    #[ORM\OneToMany(mappedBy: 'member', targetEntity: Contribution::class, orphanRemoval: true)]
     private $contributions;
 
     public function __construct()

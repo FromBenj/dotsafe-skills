@@ -2,13 +2,30 @@
 
 namespace App\Entity;
 
+use App\Controller\TechnologyContributions;
+use App\Controller\TechnologyProjectsMembers;
 use App\Repository\TechnologyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
-#[ApiResource()]
+#[ApiResource(itemOperations: [
+    'get',
+    'put',
+    'post',
+    'delete',
+    'technology_contributions' => [
+        'method' => 'GET',
+        'path' => '/technologies/{id}/contributions',
+        'controller' => TechnologyContributions::class,
+    ],
+    'technology_projects_members' => [
+        'method' => 'GET',
+        'path' => '/technologies/{id}/projects/members',
+        'controller' => TechnologyProjectsMembers::class,
+    ],
+])]
 #[ORM\Entity(repositoryClass: TechnologyRepository::class)]
 class Technology
 {
@@ -23,7 +40,7 @@ class Technology
     #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'technologies')]
     private $projects;
 
-    #[ORM\OneToMany(mappedBy: 'technology', targetEntity: Contribution::class)]
+    #[ORM\OneToMany(mappedBy: 'technology', targetEntity: Contribution::class, orphanRemoval: true)]
     private $contributions;
 
     public function __construct()

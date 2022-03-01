@@ -8,7 +8,7 @@ use App\Entity\Member;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MemberProjects extends AbstractController
+class MemberContributions extends AbstractController
 {
     protected $em;
 
@@ -18,18 +18,14 @@ class MemberProjects extends AbstractController
 
     public function __invoke(Member $data): array
     {
-        $projects = [];
-        $projectsIds = [];
+        $contributions = [];
         foreach($data->getContributions() as $contribution) {
-            if (!in_array($contribution->getProject()->getId(), $projectsIds, true)) {
-                $projects[] = $contribution->getProject();
-            }
+            $contributions[] = [
+                "technology" => $contribution->getTechnology(),
+                "project" => $contribution->getProject()
+            ];
         }
-        $a = $data->getContributions();
-        dd(["technology" => $a[1]->getTechnology(),
-        []
-        );
 
-        return $projects;
+        return $contributions;
     }
 }

@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use App\Controller\ProjectContributions;
 use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
-#[ApiResource()]
+#[ApiResource(itemOperations: [
+    'get',
+    'put',
+    'post',
+    'delete',
+    'member_projects' => [
+        'method' => 'GET',
+        'path' => '/projects/{id}/contributions',
+        'controller' => ProjectContributions::class,
+    ],
+])]
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 class Project
 {
@@ -23,7 +34,7 @@ class Project
     #[ORM\ManyToMany(targetEntity: Technology::class, inversedBy: 'projects')]
     private $technologies;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Contribution::class)]
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Contribution::class, orphanRemoval: true)]
     private $contributions;
 
     public function __construct()
