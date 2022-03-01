@@ -222,9 +222,10 @@ export default {
 #add-button-container {
   cursor: pointer;
   transition: all 0.1s;
+  border-bottom: solid white;
 }
 #add-button-container:hover{
-  border-bottom: solid;
+  border-bottom: solid black;
 }
 #add-button {
   font-weight: bold;

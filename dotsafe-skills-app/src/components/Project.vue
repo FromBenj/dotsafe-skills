@@ -1,6 +1,6 @@
 <template>
-  <div class="col-3 col-md-2 project-container" data-toggle="modal" :data-target=fullModalPresentation>
-    <div class="project-small-border project h-100 bg-white d-flex justify-content-center align-items-center">
+  <div class="col-3 col-md-2 project-container">
+    <div class="project-small-border project h-100 bg-white d-flex justify-content-center align-items-center" data-toggle="modal" :data-target=fullModalPresentation>
       <h4 class="mb-0 font-weight-bold text-center">
         {{project.name}}
       </h4>
@@ -70,9 +70,6 @@
       </div>
     </div>
   </div>
-
-
-
 </template>
 
 <script>
@@ -87,6 +84,7 @@ export default {
       required: true
     },
   },
+  emits: ["modify-project", "delete-project"],
   data() {
     return {
       projectInfos: [],
@@ -143,10 +141,29 @@ export default {
           .then(response => {
             this.projectInfos = response.data})
           .catch(error => console.log(error));
+    },
+    setProjectBorderColor() {
+      const projects = document.getElementsByClassName('project-container');
+      const colors = ["#852700", "#00cdaf", "#009075", "#ffa88c"];
+      let colorChosen = "";
+      for (let i = 0; i < projects.length; i++) {
+        if ((i+1)%4 === 0) {
+          colorChosen = colors[3];
+        } else if ((i+1)%3 === 0) {
+          colorChosen = colors[2];
+        } else if ((i+1)%2 === 0) {
+          colorChosen = colors[1];
+        } else {
+          colorChosen = colors[0];
+        }
+        projects[i].style.backgroundColor = colorChosen;
+        projects[i].style.transition = "all 0.2s ease-in-out";
+      }
     }
   },
   mounted() {
     this.getProjectInfos();
+    this.setProjectBorderColor();
   }
 }
 </script>
@@ -156,8 +173,10 @@ export default {
   .project-container {
     height: 180px;
     margin: 2rem 0;
-    background-color: #FD8A0E;
     background-clip: content-box;
+  }
+  .project-container:hover {
+    background-color: #FD8A0E !important;
   }
   .project {
     background-clip: content-box;
