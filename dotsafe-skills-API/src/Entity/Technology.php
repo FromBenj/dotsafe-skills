@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Controller\TechnologyMembers;
 use App\Controller\TechnologyContributions;
 use App\Controller\TechnologyProjectsMembers;
 use App\Repository\TechnologyRepository;
@@ -24,6 +25,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
         'method' => 'GET',
         'path' => '/technologies/{id}/projects/members',
         'controller' => TechnologyProjectsMembers::class,
+    ],
+    'technology_members' => [
+        'method' => 'GET',
+        'path' => '/technologies/{id}/members',
+        'controller' => TechnologyMembers::class,
     ],
 ])]
 #[ORM\Entity(repositoryClass: TechnologyRepository::class)]

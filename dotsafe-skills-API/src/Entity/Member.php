@@ -20,6 +20,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
         'path' => '/members/{id}/contributions',
         'controller' => MemberContributions::class,
     ],
+    'member_technologies_projects' => [
+        'method' => 'GET',
+        'path' => '/members/{id}/technologies/projects',
+        'controller' => MemberTechnologiesProjects::class,
+    ],
 ])]
 #[ORM\Entity(repositoryClass: MemberRepository::class)]
 class Member
