@@ -65,7 +65,7 @@ export default {
       addInputContainer.classList.replace('d-flex', 'd-none');
     },
     modifyTechno(payload) {
-      const updatedTechno = {name: payload.newName};
+      const updatedTechno = {name: payload.newName.trim()};
       axios
           .put(apiRoot + 'technologies/' + payload.technoToModify.id, updatedTechno)
           .then(() => (this.getAllTechnologies()))
@@ -74,10 +74,6 @@ export default {
       closeButton.click();
     },
     deleteTechno(payload) {
-      let modalBack = document.getElementsByClassName("modal-backdrop fade show");
-      for (let i = 0; i < modalBack.length; i++) {
-        modalBack[i].style.display = "none";
-      }
       axios
           .delete(apiRoot + 'technologies/' + payload.technoToDelete.id)
           .then(() => (this.getAllTechnologies()))

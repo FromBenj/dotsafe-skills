@@ -59,6 +59,9 @@
     <!-- Delete modal -->
     <div :id=modalDelete class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
+        <button type="button" class="close d-none" :id="deleteCloseButton" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <div class="modal-content">
           <p class="p-2">Êtes-vous sûr/e de vouloir supprimer le projet
             <span class="font-weight-bold">{{project.name}}</span> ?
@@ -121,6 +124,9 @@ export default {
     deleteButtonId() {
       return "delete-button-" + this.project.id
     },
+    deleteCloseButton(){
+      return 'delete-close-button-' + this.project.id
+    }
   },
   methods: {
     projectModification() {
@@ -133,6 +139,7 @@ export default {
     },
     projectDelete() {
       this.$emit("delete-project", {project: this.project});
+      document.getElementById(this.deleteCloseButton).click();
     },
     getProjectInfos() {
       const project = this.project.id

@@ -62,6 +62,9 @@
   <!-- Delete modal -->
   <div :id=modalDelete class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
+      <button type="button" class="close d-none" :id="deleteCloseButton" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="modal-content">
         <p class="p-2">Êtes-vous sûr/e de vouloir supprimer cette technologies
           <span class="font-weight-bold">{{technology.name}}</span> ?
@@ -123,6 +126,10 @@ export default {
     deleteButtonId() {
       return "delete-button-" + this.technology.id;
     },
+    deleteCloseButton() {
+      return "delete-close-button-" + this.technology.id;
+
+    }
   },
   methods: {
     technoModification() {
@@ -135,6 +142,7 @@ export default {
     },
     technoDelete() {
       this.$emit("delete-techno", {technoToDelete: this.technology});
+      document.getElementById(this.deleteCloseButton).click();
     },
     getProjectMembers() {
       const technology = this.technology.id
@@ -216,5 +224,4 @@ export default {
 .member-list-container {
   margin-top: 2rem;
 }
-
 </style>

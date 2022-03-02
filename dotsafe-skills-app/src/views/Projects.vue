@@ -82,14 +82,13 @@ export default {
     },
     addProject() {
       const projectInput = document.getElementById('project-input')
-      let newProject = {name: projectInput.value}
+      let newProject = {name: projectInput.value.trim()}
       axios
           .post(apiRoot + 'projects', newProject)
           .then(response => (this.dotsafeProjects.push(response.data)))
           .catch(error => console.log(error));
       const addInputContainer = document.getElementById('project-input-container');
       addInputContainer.classList.replace('d-flex', 'd-none');
-
     },
     modifyProject(payload) {
       const updatedProject = {name: payload.newName};
@@ -101,10 +100,6 @@ export default {
       closeButton.click();
     },
     deleteProject(payload) {
-      let modalBack = document.getElementsByClassName("modal-backdrop fade show");
-      for (let i = 0; i < modalBack.length; i++) {
-        modalBack[i].style.display = "none";
-      }
       axios
           .delete(apiRoot + 'projects/' + payload.project.id)
           .then(() => (this.getAllProjects()))

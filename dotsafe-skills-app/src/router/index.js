@@ -15,14 +15,14 @@ const routes = [
     component: Projects
   },
   {
-    path: '/members',
-    name: 'members',
-    component: Members
-  },
-  {
     path: '/technologies',
     name: 'technologies',
     component: Technologies
+  },
+  {
+    path: '/members',
+    name: 'members',
+    component: Members
   }
 ]
 

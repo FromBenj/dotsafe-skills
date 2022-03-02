@@ -2,7 +2,8 @@
   <div id="nav">
     <div class="d-flex align-items-center">
       <router-link to="/projects" class="nav-link pl-0">Projets</router-link> |
-      <router-link to="/technologies" class="nav-link">Technologies</router-link>
+      <router-link to="/technologies" class="nav-link">Technologies</router-link> |
+      <router-link to="/members" class="nav-link">Membres</router-link>
     </div>
     <img src="./assets/dotsafe-logo.jpg" alt="Logo de Dotsafe" height="150">
   </div>
