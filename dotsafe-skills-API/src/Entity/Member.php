@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Controller\MemberContributions;
+use App\Controller\MemberTechnologiesProjects;
 use App\Repository\MemberRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
