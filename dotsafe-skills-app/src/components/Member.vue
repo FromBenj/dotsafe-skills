@@ -1,7 +1,7 @@
 <template>
   <div class="col-4 col-md-3 member-container">
     <div class="h-100 bg-white d-flex justify-content-end align-items-center flex-column" data-toggle="modal" :data-target=fullModalPresentation>
-      <img :src="member.picture" :alt="'Photo de ' + fullName" class="mb-4 cursor-pointer">
+      <img :src="member.picture" :alt="'Photo de ' + fullName" class="mb-4 member-photo cursor-pointer">
       <div class="member-titles">
         <h4 class="mb-0 font-weight-bold text-center">
           {{fullName}}
@@ -86,6 +86,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from "axios";
@@ -220,6 +221,13 @@ export default {
   color: white;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+.member-photo {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+.member-photo:hover {
+  opacity: 0.5;
 }
 .delete-button {
   text-align: right;

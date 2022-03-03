@@ -43,12 +43,9 @@
 </template>
 
 <script>
-
 import Member from '@/components/Member.vue'
 import axios from 'axios'
 import {apiRoot} from '@/API-config'
-
-
 
 export default {
   name: 'Members',
@@ -150,9 +147,17 @@ export default {
 }
 </script>
 
+
 <style scoped>
 #technology-select-container {
   border-left: solid 1px;
+}
+#technology-select {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: solid 1px;
+  cursor: pointer;
 }
 #add-button-container {
   cursor: pointer;

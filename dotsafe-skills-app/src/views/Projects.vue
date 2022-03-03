@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center mt-5">
-    <div id="project-input-container" class="input-group d-none opacity-0 invisible">
+    <div id="project-input-container" class="input-group d-none">
       <input id="project-input" type="text" class="form-control" placeholder="Nom du projet" aria-label="Nouveau projet" aria-describedby="validation-button">
       <div class="input-group-append">
         <span class="input-group-text" id="validation-button" @click="addProject">Ajouter</span>
@@ -46,8 +46,8 @@
   </div>
 </template>
 
-<script>
 
+<script>
 import Project from '@/components/Project.vue'
 import axios from 'axios'
 import {apiRoot} from '@/API-config'
@@ -70,12 +70,8 @@ export default {
       const addInputContainer = document.getElementById('project-input-container');
       if (addInputContainer.classList.contains('d-none')) {
         addInputContainer.classList.replace('d-none', 'd-flex');
-        addInputContainer.classList.replace('invisible', 'visible');
-        addInputContainer.classList.replace('opacity-0', 'opacity-100');
       } else {
         addInputContainer.classList.replace('d-flex', 'd-none');
-        addInputContainer.classList.replace('visible', 'invisible');
-        addInputContainer.classList.replace('opacity-100', 'opacity-0');
       }
     },
     getAllProjects() {
@@ -220,6 +216,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
 #add-button-container {
   cursor: pointer;
@@ -237,9 +234,6 @@ export default {
 }
 #project-input-container {
   width: 30rem;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
 }
 #validation-button {
   cursor: pointer;
@@ -252,11 +246,6 @@ export default {
   padding: 0.5rem 1rem;
   border-radius: 3px;
   border: solid 1px;
-}
-.opacity-0 {
-  opacity: 0;
-}
-.opacity-100 {
-  opacity: 100;
+  cursor: pointer;
 }
 </style>

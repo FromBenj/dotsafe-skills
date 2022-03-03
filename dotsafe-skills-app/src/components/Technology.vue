@@ -77,6 +77,7 @@
   </div>
 </template>
 
+
 <script>
 import axios from "axios";
 import {apiRoot} from "@/API-config";
@@ -183,6 +184,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .technology-container {

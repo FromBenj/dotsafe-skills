@@ -24,6 +24,8 @@
     </div>
   </div>
 </template>
+
+
 <script>
 import Technology from "@/components/Technology";
 import axios from "axios";
@@ -85,6 +87,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 #add-button-container {

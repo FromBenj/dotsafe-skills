@@ -75,6 +75,7 @@
   </div>
 </template>
 
+
 <script>
 import axios from "axios";
 import {apiRoot} from "@/API-config";
@@ -194,6 +195,10 @@ export default {
   }
   .project-small-border {
     padding: 3px;
+    transition: all 0.2s ease-in-out;
+  }
+  .project-small-border:hover {
+    border: solid #FD8A0E;
   }
   .delete-button {
     text-align: right;
