@@ -1,7 +1,7 @@
 <template>
   <div class="col-4 col-md-3 member-container">
     <div class="h-100 bg-white d-flex justify-content-end align-items-center flex-column" data-toggle="modal" :data-target=fullModalPresentation>
-      <img :src="member.picture" :alt="'Photo de ' + fullName" class="mb-4">
+      <img :src="member.picture" :alt="'Photo de ' + fullName" class="mb-4 cursor-pointer">
       <div class="member-titles">
         <h4 class="mb-0 font-weight-bold text-center">
           {{fullName}}
@@ -58,8 +58,10 @@
             <input :id="updateFirstnameInputId" type="text" class="m-2 form-control w-50" :placeholder="member.firstname" aria-label="Nouveau prénom du membre" aria-describedby="validation-button">
             <input :id="updateLastnameInputId" type="text" class="m-2 form-control w-50" :placeholder="member.lastname" aria-label="Nouveau nom du membre" aria-describedby="validation-button">
             <input :id="updateEmailInputId" type="email" class="m-2 form-control w-50" :placeholder="member.email" aria-label="Nouvel e-mail du membre" aria-describedby="validation-button">
+            <p class="font-smaller font-italic mb-0 ml-2">N'oubliez pas de rajouter l'e-mail dans le bon format.</p>
+            <p class="font-smaller font-italic ml-2">Exemple : bear.grylls@dotsafe.fr</p>
             <div class="input-group-append">
-              <span class="cursor-pointer input-group-text" :id=modifyButtonId @click="memberModification">Modifier</span>
+              <span class="cursor-pointer input-group-text mt-5" :id=modifyButtonId @click="memberModification">Modifier</span>
             </div>
           </div>
         </div>
@@ -217,6 +219,7 @@ export default {
 .member-titles {
   color: white;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 .delete-button {
   text-align: right;
@@ -246,5 +249,8 @@ export default {
 }
 .project-list-container {
   margin-top: 2rem;
+}
+.font-smaller {
+  font-size: smaller;
 }
 </style>

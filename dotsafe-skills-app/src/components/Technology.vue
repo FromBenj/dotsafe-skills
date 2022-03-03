@@ -190,10 +190,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2f485814;
+  background-color: #FD8A0E12;
   margin: 2rem 0;
   border: solid 3px white;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
 }
 .technology-container:hover {
   border: solid 3px #FD8A0E;

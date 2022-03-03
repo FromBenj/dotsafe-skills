@@ -23,7 +23,7 @@
         <input id="firstname-input" type="text" class="m-2 form-control w-50" placeholder="Prénom" aria-label="Prénom du nouveau membre" aria-describedby="validation-button">
         <input id="lastname-input" type="text" class="m-2 form-control w-50" placeholder="Nom" aria-label="Nom du nouveau membre" aria-describedby="validation-button">
         <input id="email-input" type="email" class="m-2 form-control w-50" placeholder="Adresse e-mail" aria-label="E-mail du nouveau membre" aria-describedby="validation-button">
-        <p class="w-50 font-smaller font-italic">N'oubliez pas de rajouter l'e-mail dans le bon format. Example : bear.grylls@dotsafe.fr</p>
+        <p class="w-50 font-smaller font-italic">N'oubliez pas de rajouter l'e-mail dans le bon format. Exemple : bear.grylls@dotsafe.fr</p>
         <div class="mt-3 input-group-append">
           <span class="input-group-text" id="validation-button" @click="addMember">Ajouter</span>
         </div>
